@@ -11,6 +11,7 @@ export function increment(index) {
 
 // Add Comment Action Creator
 export function addComment(postId, author, comment) {
+    console.log('Dispating add comment')
     return {
         type: 'ADD_COMMENT',
         postId,

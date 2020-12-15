@@ -2,27 +2,27 @@ import React from 'react';
 import Photo from './Photo';
 import Comments from './Comments';
 
-const Main = React.createClass({
+const Single = React.createClass({
     render() {
         // destructure in variable form (best practice)
         const { postId } = this.props.params;
 
         // index of the post
         const i = this.props.posts.findIndex((post) => post.code === postId);
-        console.log(i)
+        console.log(i);
         // fetch the post
         const post = this.props.posts[i] || [];
-        console.log(post)
+        console.log(post);
 
-        const postComments = this.props.comments[postId]
+        const postComments = this.props.comments[postId] || [];
         
         return (
             <div className="single-photo">
                 <Photo i={i} post={post} {...this.props} /> 
-                <Comments postComments={postComments} />
+                <Comments postComments={postComments} {...this.props} />
             </div>
         )
     }
-})
+});
 
-export default Main;
+export default Single;
