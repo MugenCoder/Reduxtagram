@@ -14,7 +14,12 @@ const defaultState = {
     comments
 };
 
-const store = createStore(rootReducer, defaultState);
+// chrome extension redux devtools needs to know of our Store to connect to it
+// create enhancers to connect our devtools for a better debugging experience within the browser console.
+const enhancers = compose(
+    window.devToolsExtension ? window.devToolsExtension() : f => f);
+
+const store = createStore(rootReducer, defaultState, enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
