@@ -15,7 +15,7 @@ const defaultState = {
 };
 
 // chrome extension redux devtools needs to know of our Store to connect to it
-// create enhancers to connect our devtools for a better debugging experience within the browser console.
+// create enhancers to connect our devtools for a better/more advanced debugging experience within the browser console
 const enhancers = compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f);
 
