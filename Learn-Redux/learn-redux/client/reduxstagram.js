@@ -16,6 +16,11 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';  // store is a default export; {history} is a "named" export not a default
 
+// import Raven from 'raven.js';
+// import { sentry_url } from './data/config';
+
+// Raven.config(sentry_url).install();
+
 const router = (
     <Provider store={store}>
       <Router history={history}>

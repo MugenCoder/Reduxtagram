@@ -24,7 +24,7 @@ export function addComment(postId, author, comment) {
 export function removeComment(postId, i) {  // (what post should we remove the comment from, what comment should we remove)
     return {
         type: 'REMOVE_COMMENT',
-        i, // [i]
+        i, // [i] index of state
         postId
     }
 }
